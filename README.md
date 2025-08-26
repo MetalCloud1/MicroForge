@@ -8,78 +8,36 @@ Kickstart your microservices projects with secure authentication,
 scalable services, automated CI/CD pipelines, and built-in monitoring.
 </em></p>
 
-<p align="center" style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+<p align="center">
   <a href="https://github.com/MetalCloud1/MicroForge/actions/workflows/ci-cd.yaml">
-    <img src="https://github.com/MetalCloud1/Authentication-Service/actions/workflows/ci-cd.yaml/badge.svg?branch=dev" alt="CI/CD">
+    <img src="https://img.shields.io/github/actions/workflow/status/MetalCloud1/MicroForge/ci-cd.yaml?branch=dev&style=for-the-badge&logo=githubactions&logoColor=white" alt="CI/CD">
   </a>
-  <img src="https://img.shields.io/badge/version-v1.0.0-blue" alt="Version">
-  <img src="https://img.shields.io/badge/python-3.11+-blue" alt="Python">
-  <img src="https://img.shields.io/badge/docker-ready-blue" alt="Docker">
-  <img src="https://img.shields.io/badge/coverage---%25-lightgrey" alt="Coverage">
-  <img src="https://img.shields.io/badge/template-ready-green" alt="Template">
+  <img src="https://img.shields.io/badge/version-v1.0.1-4f8cc9?style=for-the-badge&logo=git&logoColor=white" alt="Version">
+  <img src="https://img.shields.io/badge/python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/docker-ready-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/template-ready-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Template">
 </p>
 
-<p align="center">🚀 Version 1.0 – stable release</p>
+<p align="center">🚀 Version 1.0.1 — stable release</p>
 <p align="center">❗ Note: initial/primitive release may contain minor issues.</p>
 
-**MicroForge** is a cloud-native microservices template designed to provide developers with a fully functional, scalable, and organized infrastructure foundation. It includes key components like monitoring, Terraform-based IaC, environment management, CI/CD, good testing and mocking practices, and essential microservices. The goal is to allow developers to focus on creating, updating, and extending services without the complexity of setting up the underlying infrastructure.
 
-<hr/>
-
-<h1 id="table-of-content" align="center">📋 Table Of Content</h1>
-
-<ol>
-
-  <li><a href="#project-overview">🔍 Project Overview</a></li>
-
-  <li><a href="#architecture">🏗️ Architecture</a></li>
-
-  <li><a href="#folder-structure">📂 Folder Structure</a></li>
-
-  <li><a href="#ci-cd-pipeline">🔄 CI/CD Pipeline</a></li>
-
-  <li><a href="#microservices">📦 Microservices</a></li>
-
-  <li><a href="#observability">🛰️ Observability</a></li>
-
-  <li><a href="#roadmap">📍 Roadmap</a></li>
-
-  <li><a href="#quick-start">⚡ Quick Start</a></li>
-
-  <li><a href="#run-everything-localdemo">🏃 Run everything (local/demo)</a></li>
-
-  <li><a href="#testing--ci-details">🧪 Testing & CI details</a></li>
-
-  <li><a href="#contributing--license">🤝 Contributing & License</a></li>
-
-  <li><a href="#pre-publish-checklist">✅ Pre-publish checklist</a></li>
-
-  <li><a href="#notes">📝 Notes</a></li>
-
-</ol>
-
-<hr/>
-
-<h1 id="project-overview" align="center">
-
-🔍 Project Overview
-
-</h1>
+<h2 id="overview">🔍 Project Overview</h2>
 
 <p>
-MicroForge is a professional microservices template including:
+MicroForge is a cloud-native microservices template that gives you a reproducible base for building service-oriented systems. It includes:
 </p>
 
 <ul>
-  <li><strong>Infrastructure as Code</strong>: Terraform manages PostgreSQL RDS, AWS Secrets Manager, and Kubernetes resources.</li>
-  <li><strong>Kubernetes Deployments</strong>: Deployments, Services, Namespaces, ServiceAccounts, OIDC/IAM roles (IRSA).</li>
-  <li><strong>CI/CD</strong>: GitHub Actions workflows for automated testing, linting, building Docker images, and optional deployment to AWS.</li>
-  <li><strong>Security</strong>: Environment-specific secrets, AWS Secrets Manager integration, and secure password hashing.</li>
-  <li><strong>Observability</strong>: Prometheus metrics, Loki JSON logs, Grafana dashboards ready for use.</li>
-  <li><strong>Microservices</strong>: <code>auth_service</code> with full authentication flow, and <code>users-api</code> as a minimal, reusable scaffold service.</li>
+  <li><strong>IaC</strong>: Terraform modules for PostgreSQL RDS, AWS Secrets Manager, and Kubernetes infra.</li>
+  <li><strong>Kubernetes</strong>: manifests for Deployments, Services, Namespaces, ServiceAccounts and (optionally) IRSA/OIDC roles.</li>
+  <li><strong>CI/CD</strong>: GitHub Actions workflows for linting, testing, building Docker images and optional deployments.</li>
+  <li><strong>Security</strong>: environment-specific secrets, password hashing, and optional HIBP checks.</li>
+  <li><strong>Observability</strong>: Prometheus metrics, Loki JSON logs, Grafana dashboards (provisionable via Helm).</li>
+  <li><strong>Microservices</strong>: `auth_service` (complete auth flow) and `users-api` (scaffold).</li>
 </ul>
 
-<hr/>
+---
 
 <h1 id="architecture" align="center">
 
@@ -87,17 +45,21 @@ MicroForge is a professional microservices template including:
 
 </h1>
 
+</hr>
+
+
 <p align="center">
   <img src="docs/diagrams/diagrams-svg-files/ProjectArchitecture.svg" width="600" alt="Project Architecture"/>
 </p>
 
-<hr/>
 
-<h1 id="folder-structure" align="center">
+<h1 align="center">
 
 📂 Project Structure
 
 </h1>
+
+---
 
 <h2 id="project-overview-diagram" align="center">
 
@@ -109,15 +71,9 @@ MicroForge is a professional microservices template including:
 
 <h2 id="repo-workflows" align="center">
 
-2️⃣ Repository Workflows
+2️⃣ 
 
-</h2>
-
-<p align="center"><img src="docs/diagrams/diagrams-svg-files/repository-workflows.svg" width="400" alt="Workflows"/></p>
-
-<h2 id="auth-service-diagram" align="center">
-
-3️⃣ Auth Service
+2️⃣  Auth Service
 
 </h2>
 
@@ -125,7 +81,7 @@ MicroForge is a professional microservices template including:
 
 <h2 id="monitoring-diagram" align="center">
 
-4️⃣ Monitoring
+3️⃣ Monitoring
 
 </h2>
 
@@ -133,15 +89,15 @@ MicroForge is a professional microservices template including:
 
 <h2 id="terraform-diagram" align="center">
 
-5️⃣ Terraform
+4️⃣ Terraform
 
 </h2>
 
 <p align="center"><img src="docs/diagrams/diagrams-svg-files/terraform.svg" width="600" alt="Terraform"/></p>
 
 <h2 id="demo-service-diagram" align="center">
-
-6️⃣ Template / Demo Service
+ 
+5️⃣ Template / Demo Service
 
 </h2>
 
@@ -168,24 +124,259 @@ MicroForge is a professional microservices template including:
   <li><code>deploy</code> → manual/automated deployment to staging/production</li>
 </ol>
 
-<hr/>
+<h2 id="observability">🛰️ Observability & Monitoring (clear scope)</h2>
 
-<h1 id="microservices" align="center">📦 Microservices</h1>
+<p>
+Monitoring is provided and intentionally scoped to two dedicated namespaces so you can compare Dev vs Prod easily:
+</p>
+
+
+<ul>
+  <li><strong>Namespaces monitored</strong>:
+    <ul>
+      <li><code>auth-dev</code> — development / staging environment</li>
+      <li><code>auth-prod</code> — production environment</li>
+    </ul>
+  </li>
+  <li><strong>Monitoring stack (recommended)</strong>:
+    <ul>
+      <li>Prometheus (kube-prometheus-stack) — scrapes service endpoints and kube metrics</li>
+      <li>Loki (loki-stack) — collects structured JSON logs</li>
+      <li>Grafana — dashboards for latency, throughput, errors; dashboards are pre-bundled and can be provisioned</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>How monitoring is configured</h3>
+
+---
+
+<p>
+- Prometheus is configured to <strong>scrape metrics from pods/services in the namespaces <code>auth-dev</code> and <code>auth-prod</code></strong>. Use the Prometheus Helm values file at <code>monitoring/prometheus-values.yaml</code> to set the namespaceSelectors/namespaceRegex or static targets.  
+- Loki is installed with a values file at <code>monitoring/values.yaml</code> and configured to collect pod logs cluster-wide but dashboards are filtered by namespace.  
+- Grafana contains pre-made dashboards that use the <code>namespace</code> label so you can switch between <code>auth-dev</code> and <code>auth-prod</code> views.
+</p>
+
+<h3>Quick install (Helm)</h3>
+
+```bash
+# add chart repos
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+# install Loki (replace monitoring/values.yaml with your values)
+helm upgrade --install loki-stack grafana/loki-stack -n monitoring -f monitoring/values.yaml --create-namespace
+
+# install kube-prometheus-stack (replace monitoring/prometheus-values.yaml with your values)
+helm upgrade --install prom-stack prometheus-community/kube-prometheus-stack -n monitoring -f monitoring/prometheus-values.yaml
+```
+<h3>Notes: ensuring Prometheus scrapes only the auth namespaces</h3>
+
+In your monitoring/prometheus-values.yaml you can add a serviceMonitor or modify the namespaceSelector so Prometheus scrapes only auth-dev and auth-prod. Example snippet:
+
+```yaml
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorSelector:
+      matchExpressions:
+        - {key: kubernetes.io/metadata.name, operator: In, values: ["auth-dev", "auth-prod"]}
+```
+
+(Adjust according to the chart version — the repo contains example values.)
+
+<h3>Access Grafana</h3>
+
+```bash
+# port-forward Grafana (example service name for kube-prometheus-stack)
+kubectl port-forward svc/prom-stack-grafana -n monitoring 3000:80
+# then open http://localhost:3000
+```
+
+<h1 id="quick-start" align="center">⚡ Quick Start</h1>
+
+<h2 id="prerequisites" align="center">Pre-requisites</h2>
+
+<ul>
+  <li>Docker & Docker Compose (for local/demo)</li>
+  <li>Python 3.11+</li>
+  <li>PostgreSQL (local or managed) — or use the provided Docker image</li>
+  <li><code>kubectl</code>, <code>helm</code> (if testing Kubernetes/Helm flows)</li>
+  <li>(Optional) AWS CLI + credentials for Terraform / real deployments</li>
+</ul>
+
+<h3>1) Create namespaces</h3>
+
+```bash
+# create dev namespace
+kubectl apply -f k8s/namespaces/auth-dev.yaml
+
+# create prod namespace (if you want to test prod layout too)
+kubectl apply -f k8s/namespaces/auth-prod.yaml
+```
+
+Example content for the namespace manifest (k8s/namespaces/auth-dev.yaml):
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: auth-dev
+  labels:
+    environment: dev
+```
+<h3>2) Deploy Postgres and services (relative paths)</h3>
+
+```bash
+# deploy Postgres into auth-dev
+kubectl apply -n auth-dev -f ./k8s/postgres/
+
+# deploy auth service into auth-dev
+kubectl apply -n auth-dev -f ./k8s/auth_service/
+
+# deploy users-api into auth-dev
+kubectl apply -n auth-dev -f ./k8s/users-api/
+```
+> **Tip:** if manifests already include a namespace: field, -n is still ok; keep the YAMLs consistent.
+
+<h3>3) Verify pods & services</h3>
+
+```bash
+kubectl get pods -n auth-dev
+kubectl get svc -n auth-dev
+kubectl get deploy -n auth-dev
+```
+
+<h3>4) Port-forward for local testing</h3>
+
+```bash
+# get the auth-service pod name
+POD_AUTH=$(kubectl get pods -n auth-dev -l app=auth-service -o jsonpath='{.items[0].metadata.name}')
+
+# forward auth-service pod (example: pod exposes 8000)
+kubectl port-forward -n auth-dev $POD_AUTH 8000:8000 &
+echo "auth service forwarded at http://localhost:8000"
+
+# get postgres pod name and forward
+POD_PG=$(kubectl get pods -n auth-dev -l app=postgres -o jsonpath='{.items[0].metadata.name}')
+kubectl port-forward -n auth-dev $POD_PG 5432:5432 &
+echo "postgres forwarded at localhost:5432"
+```
+
+<h3>5) Smoke tests (curl)</h3>
+
+```bash
+# register a user
+curl -s -X POST http://localhost:8000/register \
+  -H "Content-Type: application/json" \
+  -d '{"email":"tester@example.com","password":"Test1234!"}' | jq
+
+# request a token (form style)
+curl -s -X POST http://localhost:8000/token \
+  -d "username=tester@example.com&password=Test1234!" | jq
+```
+
+<h3>6) Running tests inside the cluster (recommended for integration tests)</h3>
+
+* If your test suite expects pods and DB, run the tests from a ephemeral pod with the repo mounted or using an image that has pytest and dependencies:
+
+```bash
+# run tests from a temporary pod mounting current repo (requires accessible files from runner)
+kubectl run -n auth-dev test-runner --rm -i --tty --image=python:3.11 -- bash -c "
+  pip install -r /tmp/repo/auth_service/requirements-test.txt &&
+  pytest /tmp/repo/auth_service/tests -q
+"
+```
+
+(Alternative: kubectl exec into an existing test pod if you have one.)
+
+<hr/> <h2 id="docker-quickstart">🐳 Quick Start — Docker (alternative)</h2> 
+
+<p> If you prefer to test locally with Docker, use a dedicated Docker network so containers can talk to each other. </p>
+
+ <h3>1) Create Docker network</h3>
+
+ ```bash
+ docker network create microforge-net || true
+```
+
+<h3>2) Start Postgres</h3>
+
+```bash
+docker run -d --name mg-postgres --network microforge-net \
+  -e POSTGRES_USER=authuser -e POSTGRES_PASSWORD=authpass -e POSTGRES_DB=authdb \
+  -p 5432:5432 postgres:13
+```
+<h3>3) Start services (default images)</h3>
+
+```bash
+docker run -d --name auth-service --network microforge-net \
+  -e POSTGRES_HOST=mg-postgres -e POSTGRES_USER=authuser -e POSTGRES_PASSWORD=authpass -e POSTGRES_DB=authdb \
+  -p 8000:8000 gilbr/auth-service:latest
+
+docker run -d --name users-api --network microforge-net \
+  -e POSTGRES_HOST=mg-postgres -e POSTGRES_USER=authuser -e POSTGRES_PASSWORD=authpass -e POSTGRES_DB=authdb \
+  -p 8080:8080 gilbr/users-api:latest
+```
+
+<hr/> <h2 id="postgres-test-config">🗄️ PostgreSQL test configuration</h2>
+
+Environment used by the workflow's PostgreSQL service:
+
+```ini
+POSTGRES_USER=testuser
+POSTGRES_PASSWORD=testpass
+POSTGRES_DB=testdb
+```
+
+Database URL for tests (used in CI jobs):
+
+```bash
+postgresql+asyncpg://testuser:testpass@localhost:5432/testdb
+```
+
+Environment variables used in CI:
+
+```bash
+DATABASE_URL — See PostgreSQL test configuration above.
+PYTHONPATH — add service src dirs when running tests locally (example in workflow).
+```
+
+<hr/> <h2 id="ci-cd">🔄 CI/CD pipeline (high level)</h2> 
+
+<p> The GitHub Actions workflow runs on PRs and pushes to <code>dev</code> / <code>main</code>. Typical steps: </p>
+
+ <ol> <li><code>lint</code> — ruff / mypy / black</li> <li><code>test</code> — pytest (unit + integration) using the test Postgres service</li> <li><code>build</code> — build Docker images (local or CI registry)</li> <li><code>publish</code> — optional push to container registry</li> <li><code>deploy</code> — manual or automated promotion (staging → prod)</li> </ol>
+
+---
+
+  <h1 id="microservices" align="center">📦 Microservices</h1>
 
 <ul>
   <li><strong>Auth Service (<code>auth_service</code>)</strong> — Full authentication flow: registration, email verification, JWT login/refresh, password hashing, user management.</li>
   <li><strong>Users API (<code>users-api</code>)</strong> — Minimal scaffold service: health endpoint, basic CRUD layout, designed to be copied & extended.</li>
 </ul>
 
-<hr/>
+   <h2 id="testing">🧪 Testing & Linting</h2> 
 
-<h1 id="observability" align="center">🛰️ Observability</h1>
+   <p> 
 
-<ul>
-  <li><strong>Prometheus</strong> — instrumented FastAPI metrics via <code>prometheus_fastapi_instrumentator</code>.</li>
-  <li><strong>Grafana</strong> — dashboards (latency, throughput, errors) provided as JSON; ready to be provisioned via Helm.</li>
-  <li><strong>Loki</strong> — structured JSON logs using <code>loguru</code> for advanced log queries.</li>
-</ul>
+   **Run tests locally (example):**
+
+  </p>
+
+```bash
+  # run pytest
+pytest -q
+
+# run lint/static checks
+ruff check .
+black --check .
+mypy src
+```
+
+<p>For integration tests that depend on pods (Postgres/Services), prefer running tests from inside the cluster (see Kubernetes instructions above) or create ephemeral containers that connect to the running Postgres container.</p> 
 
 <hr/>
 
@@ -204,106 +395,6 @@ MicroForge is a professional microservices template including:
 </ul>
 
 <hr/>
-
-<h1 id="quick-start" align="center">⚡ Quick Start</h1>
-
-<h2 id="prerequisites" align="center">Pre-requisites</h2>
-
-<ul>
-  <li>Docker & Docker Compose (for local/demo)</li>
-  <li>Python 3.11+</li>
-  <li>PostgreSQL (local or managed) — or use the provided Docker image</li>
-  <li><code>kubectl</code>, <code>helm</code> (if testing Kubernetes/Helm flows)</li>
-  <li>(Optional) AWS CLI + credentials for Terraform / real deployments</li>
-</ul>
-
-<h2 id="service-local" align="center">Local dev (service-level)</h2>
-
-```bash
-git clone https://github.com/MetalCloud1/MicroForge.git
-cd MicroForge/auth_service
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt -r requirements-test.txt
-
-export POSTGRES_USER=authuser
-export POSTGRES_PASSWORD=authpass
-export POSTGRES_DB=authdb
-export POSTGRES_HOST=localhost
-export SECRET_KEY=dev_secret
-export SENDER_EMAIL=<your_email>
-export SENDER_PASSWORD=<your_email_password>
-
-uvicorn src.main:app --reload --port 8000
-```
-
-Test endpoints using curl or Postman: `/register`, `/verify-email`, `/token`, `/users/me`.
-
-<hr/>
-
-<h1 id="run-everything-localdemo" align="center">🏃 Run everything (local / demo)</h1>
-
-<p>Two recommended ways to bring the stack up quickly for demo/testing:</p>
-
-<h2 id="docker-compose-demo" align="center">
-1) Docker Compose (quick demo)
-</h2>
-
-<p>Use the included demo compose to run core services locally (Postgres, auth_service, users-api, Prometheus, Loki, Grafana):</p>
-
-```bash
-docker-compose -f docker/docker-compose.demo.yml up --build -d
-```
-
-<p><em>Notes:</em></p> <ul> <li><code>docker/docker-compose.demo.yml</code> is opinionated for local demos and uses ephemeral storage.</li> <li>Use <code>.env.example</code> as a template for environment variables; copy to <code>.env</code> and edit before running.</li> </ul> 
-
-<h2 id="k8s-helm-demo" align="center">2) Kubernetes / Helm (more realistic)</h2>
-
- <p>Use Helm to deploy a more production-like environment with monitoring and services:</p>
-
-```bash
-helm repo add grafana https://grafana.github.io/helm-charts
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm repo update
-
-helm upgrade --install loki-stack grafana/loki-stack -n monitoring -f monitoring/values.yaml --create-namespace
-
-helm upgrade --install prom-stack prometheus-community/kube-prometheus-stack -n monitoring -f monitoring/prometheus-values.yaml
-```
-
-<p>Use the extracted <code>values.yaml</code> files in the <code>monitoring/</code> directory for consistency with your current deployment.</p> <hr/> 
-
-<h1 
-id="testing--ci-details" align="center">
-
-🧪 Testing & CI details
-
-</h1> 
-
-<h2 id="run-tests" align="center">
-
-Run tests locally
-
-</h2>
-
-```bash
-pytest -q
-
-pytest --cov=src --cov-report=term-missing
-```
-<h2 id="linting" align="center">
-Linting / static checks
-</h2>
-
-```bash
-ruff check .
-black --check .
-mypy src
-```
-
-<h2 id="ci-workflow" align="center">CI pipeline (GitHub Actions)
-</h2> 
-
-<p>The repo includes a GitHub Actions workflow that runs on PRs and pushes to <code>dev</code>/<code>main</code>. Flow:</p> <ul> <li><code>on: pull_request</code> → run lint + tests</li> <li><code>on: push: branches: [dev]</code> → build docker images, run integration tests</li> <li>Manual promotion → tag release & deploy</li> </ul> <hr/> 
 
 <h1 id="contributing--license" align="center">
 
@@ -336,36 +427,12 @@ https://github.com/MetalCloud1</a>).
 
 </strong></p> <ul> <li>Claim the original template as entirely your own in resumes/portfolios without prior notice to the author.</li> <li>Sell, redistribute, or deploy the original template commercially without consent.</li> </ul> <p>
 
-<strong>Author:</strong> Gilbert Ramírez (<a href="https://github.com/MetalCloud1">GitHub</a>)</p> <hr/> 
-
-<h1 id="pre-publish-checklist" align="center">
-
-✅ Pre-publish checklist</h1> 
-
-<ul> <li>[ ] README finalized and screenshots/diagrams included</li> 
-
-<li>[ ] LICENSE.md present</li> 
-
-<li>[ ] <code>.gitignore</code> reviewed for secrets / private keys</li> 
-
-<li>[ ] Local secrets removed</li>
-
- <li>[ ] Commits author/email consistent (<code>MetalCloud1</code> / <code>gilbertoismael5555@gmail.com</code>)</li>
-
-  <li>[ ] Branch protection: protect <code>main</code>, require PR reviews, CI checks</li> 
-
-  <li>[ ] Optional: <code>CONTRIBUTING.md</code>, <code>CODE_OF_CONDUCT.md</code>, <code>SECURITY.md</code>
-  </li> </ul> <hr/> 
 
 
-  <h1 id="notes" align="center">
+<h2 id="notes">📝 Notes & tips</h2> 
 
-  📝 Notes
+<ul> <li>Docker Compose is useful for quick demos (ephemeral). For more realistic tests use Kubernetes + Helm.</li> <li>Monitoring dashboards are pre-made and filtered by namespace — use <code>auth-dev</code> vs <code>auth-prod</code> to compare behavior.</li> 
 
-  </h1> <ul> 
+<li>Keep a <code>k8s/namespaces/</code> folder with namespace manifests so applying the same namespace is reproducible.</li> <li>Before running a rebase/squash, create a backup branch: <code>git branch backup-main</code>.</li> </ul>
 
-  <li>Focus: robust template for microservices, infrastructure, observability.</li> 
-
-  <li>Docker Compose demo is ephemeral; use Kubernetes & Helm for realistic deployments.</li> 
-
-  <li>Consider enabling GitHub Template to signal reusability.</li> </ul> 
+<p align="center">Built with ❤️ by Gilbert Ramírez — <a href="https://github.com/MetalCloud1">github.com/MetalCloud1</a></p> ```

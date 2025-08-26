@@ -257,26 +257,6 @@ Scaling & production notes
 
 * **Prometheus:** run with Thanos or Cortex for long-term storage & horizontal scaling if needed.
 
-<h2 align = "center">
-Example: Add another service to log scraping
-</h2>
-
-* To collect logs from another service (e.g., `users-api`), add a `scrape_config` in Promtail values similar to auth-service but matching `app: users-api`. Or label pods accordingly and reuse the `kubernetes-pods` job with proper relabel rules.
-
-<h2 align ="center">
-Final checklist before production
-</h2>
-
-* [ ] Move secrets out of plain `values.yaml` into Kubernetes Secrets.
-
- * [ ] Secure Grafana (TLS / auth).
-
- * [ ] Tune Loki retention, index and chunk settings.
- 
- * [ ] Validate Prometheus target discovery in Prometheus UI.
-
- * [ ] Create Grafana dashboards and export them as JSON for repo-managed dashboards.
-
  ## License
  
  This project is licensed under **CC BY-NC-ND (custom)**.  

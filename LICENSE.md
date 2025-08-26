@@ -1,6 +1,6 @@
 # License
 
-Copyright 2025 Gilberto Ramírez (GitHub: [https://github.com/MetalCloud1](https://github.com/MetalCloud1))
+Copyright 2025 (GitHub: [https://github.com/MetalCloud1](https://github.com/MetalCloud1))
 
 This project is licensed under a customized Creative Commons Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND) license, with the following terms:
 
