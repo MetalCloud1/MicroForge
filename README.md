@@ -21,6 +21,21 @@ scalable services, automated CI/CD pipelines, and built-in monitoring.
 <p align="center">🚀 Version 1.0.1 — stable release</p>
 <p align="center">❗ Note: initial/primitive release may contain minor issues.</p>
 
+<h2 align="center">
+ 
+🧭 About MicroForge (context)
+ 
+</h2>
+
+<p>
+ 
+MicroForge began as my first end-to-end cloud learning platform — a practical environment where I taught myself to design, deploy, and operate real infrastructure instead of learning through isolated exercises.
+It captures the foundational engineering lessons that shaped how I now approach systems: secure-by-design workflows, reproducible environments, GitOps-driven automation, and observability as a core requirement.
+
+This project is intentionally hands-on and iterative. Every component reflects a decision, a trade-off, or a failure that forced clarity. MicroForge is not meant to be polished; it’s meant to be real.
+It documents the exact engineering patterns that built my current technical foundation.
+
+</p>
 
 <h2 id="overview">🔍 Project Overview</h2>
 
